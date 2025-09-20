@@ -1,59 +1,19 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lista de Tarefas</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Para ícones -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mural de Posts</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
 </head>
-<body>
-
-  <div id="darkModeToggle">
-    <i id="darkModeIcon" class="fas fa-moon"></i>
-  </div>
-
-  <div class="container">
-    <h1>Lista de Tarefas</h1>
-
-
-    <div class="form">
-      <input id="titulo" placeholder="Título da tarefa">
-      <input id="descricao" placeholder="Descrição">
-      <select id="prioridade">
-        <option value="Baixa">Baixa</option>
-        <option value="Média" selected>Média</option>
-        <option value="Alta">Alta</option>
-      </select>
-      <button onclick="criarTarefa()">Adicionar</button>
+<body class="p-4">
+    <div class="container">
+        <h1>Mural de Posts</h1>
+        <input type="text" id="titleInput" placeholder="Título do post" class="form-control mb-2">
+        <textarea id="contentInput" placeholder="Conteúdo do post" class="form-control mb-2"></textarea>
+        <button id="addPostBtn" class="btn btn-primary mb-3">Adicionar Post</button>
+        <ul id="postList" class="list-group"></ul>
     </div>
-
-
-    <div class="filtros">
-      <select id="filtroStatus" onchange="carregarTarefas()">
-        <option value="">Todos os status</option>
-        <option value="pendente">Pendente</option>
-        <option value="concluída">Concluída</option>
-      </select>
-
-      <select id="filtroPrioridade" onchange="carregarTarefas()">
-        <option value="">Todas as prioridades</option>
-        <option value="Baixa">Baixa</option>
-        <option value="Média">Média</option>
-        <option value="Alta">Alta</option>
-      </select>
-    </div>
-
-    <div class="contador">
-      <span id="pendentes">Pendentes: 0</span> |
-      <span id="concluidas">Concluídas: 0</span>
-    </div>
-
-    <ul id="tarefas"></ul>
-
-    <button onclick="exportarJSON()">Exportar JSON</button>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
